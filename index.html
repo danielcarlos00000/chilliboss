@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chilli Boss — Seu momento, seu taco. Peça comida mexicana do seu jeito.">
+  <title>Chilli Boss | Seu momento, seu taco</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">🌶️ Sabor mexicano de verdade, feito para o seu momento.</div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Chilli Boss - início">
+      <span class="pepper-logo" aria-hidden="true">🌶</span>
+      <span><strong>CHILLI BOSS</strong><small>SEU MOMENTO, SEU TACO.</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <nav id="mainNav">
+      <a href="#inicio" class="nav-link active">Início</a>
+      <a href="#cardapio" class="nav-link">Cardápio</a>
+      <a href="#pedidos" class="nav-link">Meus pedidos</a>
+      <a href="#perfil" class="nav-link">Meu perfil</a>
+      <a href="#carrinho" class="nav-link cart-nav">Sacola <span id="cartCount">0</span></a>
+      <button class="btn btn-outline btn-small" id="loginOpen">Entrar</button>
+      <a class="btn btn-primary btn-small" href="#cadastro">Cadastrar</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema" title="Alternar modo claro/escuro">☾</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="page-section hero">
+      <div class="hero-copy">
+        <span class="eyebrow">¡HOLA, AMIGOS!</span>
+        <h1>UM POUCO DE<br><em>MÉXICO</em> NO<br>SEU DIA.</h1>
+        <p>Tacos caprichados, burritos irresistíveis e aquele toque de pimenta que transforma qualquer momento.</p>
+        <div class="hero-actions"><a href="#cardapio" class="btn btn-primary">Explorar cardápio <span>↗</span></a><a href="#sobre" class="text-link">Conheça a Chilli Boss</a></div>
+        <div class="hero-note"><span>★★★★★</span> Sabor que conquista na primeira mordida</div>
+      </div>
+      <div class="hero-art">
+        <div class="sunburst"></div>
+        <div class="hero-sticker">SABOR<br>SEM<br>FREIO!</div>
+        <div class="food-plate"><span class="food-emoji">🌮</span></div>
+        <div class="floating-chilli">🌶️</div>
+        <div class="hero-caption">FRESCO • MARCANTE • MEXICANO</div>
+      </div>
+    </section>
+
+    <section id="sobre" class="intro-strip">
+      <div><span class="eyebrow">NOSSA MISSÃO</span><h2>Mais sabor. Mais alegria.<br>Mais <em>Chilli Boss.</em></h2></div>
+      <p>A gente acredita que comida boa reúne pessoas. Por isso, juntamos ingredientes fresquinhos, receitas inspiradas no México e muita personalidade em cada pedido.</p>
+      <div class="strip-icon">✳</div>
+    </section>
+
+    <section id="cardapio" class="page-section menu-section">
+      <div class="section-heading"><div><span class="eyebrow">ESCOLHA SUA FOME</span><h2>Nosso <em>cardápio</em></h2></div><span class="heading-aside">FEITO NA HORA, DO SEU JEITO.</span></div>
+      <div class="menu-tools">
+        <label class="search-box"><span>⌕</span><input id="productSearch" type="search" placeholder="Buscar taco, burrito, churros..." maxlength="60" aria-label="Buscar produtos"></label>
+        <div class="filters" id="categoryFilters">
+          <button class="filter active" data-category="Todos">Todos</button>
+          <button class="filter" data-category="Entradas">Entradas</button>
+          <button class="filter" data-category="Tacos">Tacos</button>
+          <button class="filter" data-category="Burritos">Burritos</button>
+          <button class="filter" data-category="Bebidas">Bebidas</button>
+          <button class="filter" data-category="Sobremesas">Sobremesas</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state hidden" id="emptyProducts">Não encontramos esse sabor. Tente outra busca!</p>
+    </section>
+
+    <section class="promo-band">
+      <span class="promo-pepper">🌶️</span><div><span class="eyebrow">VOCÊ NO COMANDO</span><h2>Do suave ao <em>extra picante.</em></h2><p>Escolha seu molho, seus adicionais e monte a combinação perfeita.</p></div><a href="#cardapio" class="btn btn-light">Montar meu pedido ↗</a>
+    </section>
+
+    <section id="cadastro" class="page-section account-section">
+      <div class="section-heading"><div><span class="eyebrow">BEM-VINDO À FAMÍLIA</span><h2>Crie sua <em>conta</em></h2></div><p>Cadastre-se para acompanhar seus pedidos e deixar tudo mais prático.</p></div>
+      <form id="registerForm" class="form-card">
+        <div class="form-grid">
+          <label>Nome completo<input id="regName" name="name" required maxlength="70" placeholder="Seu nome"></label>
+          <label>E-mail<input id="regEmail" name="email" type="email" required maxlength="100" placeholder="voce@email.com"></label>
+          <label>CPF<input id="regCpf" name="cpf" inputmode="numeric" required maxlength="14" placeholder="000.000.000-00"></label>
+          <label>Telefone<input id="regPhone" name="phone" inputmode="numeric" required maxlength="15" placeholder="(00) 00000-0000"></label>
+          <label>CEP<input id="regCep" name="cep" inputmode="numeric" required maxlength="9" placeholder="00000-000"></label>
+          <label>Senha<input id="regPassword" name="password" type="password" required minlength="6" maxlength="30" placeholder="Mínimo de 6 caracteres"></label>
+        </div>
+        <button class="btn btn-primary" type="submit">Criar minha conta ↗</button>
+        <p class="form-feedback" id="registerFeedback" aria-live="polite"></p>
+        <p class="form-small">Já tem uma conta? <button type="button" class="inline-button" id="loginOpen2">Faça login</button></p>
+      </form>
+    </section>
+
+    <section id="pedidos" class="page-section content-section">
+      <div class="section-heading"><div><span class="eyebrow">SEU HISTÓRICO</span><h2>Meus <em>pedidos</em></h2></div><p>Acompanhe por aqui os pedidos realizados nesta demonstração.</p></div>
+      <div id="ordersList" class="orders-list"><div class="empty-card">Ainda não há pedidos por aqui. Que tal escolher seu primeiro taco? 🌮</div></div>
+    </section>
+
+    <section id="carrinho" class="page-section content-section">
+      <div class="section-heading"><div><span class="eyebrow">QUASE LÁ!</span><h2>Sua <em>sacola</em></h2></div><p>Confira seus itens e finalize seu pedido.</p></div>
+      <div class="cart-layout"><div id="cartItems" class="cart-items"><div class="empty-card">Sua sacola está esperando por você. 🌮</div></div>
+        <aside class="summary-card"><h3>Resumo do pedido</h3><div class="summary-line"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div><div class="summary-line"><span>Entrega</span><strong>R$ 5,00</strong></div><div class="summary-line total"><span>Total</span><strong id="total">R$ 0,00</strong></div><button class="btn btn-primary full-width" id="checkoutBtn">Finalizar pedido ↗</button><p class="form-small">Ao finalizar, seus itens serão registrados no histórico local.</p></aside>
+      </div>
+      <div class="json-area"><div><strong>Dados dos produtos em JSON</strong><p>Cada item da sacola possui seu próprio objeto JSON. Você pode conferir ou exportar os dados.</p></div><button class="btn btn-outline btn-small" id="exportJson">Exportar JSON da sacola</button><pre id="cartJson">[]</pre></div>
+    </section>
+
+    <section id="perfil" class="page-section content-section">
+      <div class="section-heading"><div><span class="eyebrow">SEUS DADOS</span><h2>Meu <em>perfil</em></h2></div><p>As informações da conta cadastrada neste navegador aparecem aqui.</p></div>
+      <div id="profileCard" class="profile-card"><div class="empty-card">Faça seu cadastro ou login para visualizar seus dados.</div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-brand"><span class="pepper-logo">🌶</span><div><strong>CHILLI BOSS</strong><small>SEU MOMENTO, SEU TACO.</small></div></div><p>Um sabor do México para deixar seu dia mais especial.</p><div class="footer-bottom"><span>© 2026 Chilli Boss. Projeto acadêmico demonstrativo.</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+
+  <div class="modal hidden" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="modal-backdrop" data-close="true"></div><div class="modal-card"><button class="modal-close" id="loginClose" aria-label="Fechar">×</button><span class="eyebrow">QUE BOM TER VOCÊ AQUI</span><h2 id="loginTitle">Entre na sua <em>conta</em></h2><form id="loginForm"><label>E-mail<input id="loginEmail" type="email" required maxlength="100" placeholder="voce@email.com"></label><label>Senha<input id="loginPassword" type="password" required maxlength="30" placeholder="Sua senha"></label><button class="btn btn-primary full-width" type="submit">Entrar ↗</button><p class="form-feedback" id="loginFeedback" aria-live="polite"></p></form><p class="form-small">Ainda não tem conta? <a href="#cadastro" id="goRegister">Cadastre-se</a></p></div>
+  </div>
+
+  <div class="modal hidden" id="customModal" role="dialog" aria-modal="true" aria-labelledby="customTitle">
+    <div class="modal-backdrop" data-custom-close="true"></div><div class="modal-card custom-card"><button class="modal-close" id="customClose" aria-label="Fechar">×</button><span class="eyebrow">DO SEU JEITO</span><h2 id="customTitle">Personalize</h2><p id="customDescription" class="custom-description"></p>
+      <form id="customForm"><label>Molho<select id="sauce"><option>Suave</option><option>Picante</option><option>Extra picante</option></select></label><label>Proteína<select id="protein"><option>Original do produto</option><option>Carne bovina</option><option>Frango</option><option>Carne suína</option><option>Vegetariana</option></select></label><fieldset><legend>Adicionais (R$ 3,00 cada)</legend><label class="check-option"><input type="checkbox" value="Guacamole"> Guacamole</label><label class="check-option"><input type="checkbox" value="Cheddar"> Cheddar</label><label class="check-option"><input type="checkbox" value="Sour cream"> Sour cream</label><label class="check-option"><input type="checkbox" value="Jalapeño"> Jalapeño</label></fieldset><label>Observações<input id="notes" maxlength="120" placeholder="Ex.: sem alface (opcional)"></label><label>Quantidade<input id="quantity" type="number" min="1" max="20" value="1" required></label><button class="btn btn-primary full-width" type="submit">Adicionar à sacola ↗</button></form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
